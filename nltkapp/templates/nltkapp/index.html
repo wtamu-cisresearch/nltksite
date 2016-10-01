@@ -1,0 +1,133 @@
+{% load static %}<!doctype html>
+<html>
+<head>
+<title> NLTK Command Center </title>
+<link rel="stylesheet" type="text/css" href="{% static 'DataTables/datatables.min.css' %}"/>
+<script type="text/javascript" charset="utf-8">
+	var wordList = [];
+	var oTable;
+</script>
+<script src="{% static 'js/jquery-3.1.1.js' %}"></script>
+<script type="text/javascript" src="{% static 'DataTables/datatables.min.js' %}"></script>
+<script>
+	$( document ).ready(function() {
+		corpus_selected();
+	});
+	
+	function corpus_selected() {
+		var value = $("#corpus_dropdown option:selected").val();
+		$.ajax({
+			url: '/nltkapp/getdocuments/',
+			data: {'corpus_id': value},
+			dataType: 'json',
+			success: function (data) {
+				$("#document_dropdown").html('<option value=\"-1\" selected> Entire Corpus</option>\n');
+				$.each(data.documents, function (i, document) {
+					var name = document.name.split("/")
+					$("#document_dropdown").append($('<option>', {
+						value: document.id,
+						text: name[name.length-1]
+					}));
+				});
+			}
+		});
+	}
+	function getDocuments() {
+		var documentIDs = [];
+		$("#document_dropdown option:selected").each(function(i, selected) {
+			documentIDs[i] = $(selected).val();
+		});
+		return documentIDs;
+	}
+	
+	function nltk_generate_wordcloud() {
+		var corpusID = $("#corpus_dropdown option:selected").val();
+		var documentIDs = getDocuments();
+		var ngramValue = $("#ngram_dropdown option:selected").val();
+		var scoringMethod = $("#score_dropdown option:selected").val();
+		// FIXME: Maybe switch this to a post
+		// For POST we need the django csrftoken security stuff
+		$.ajax({
+			method: 'GET',
+			url: '/nltkapp/wordfreq/',
+			data: {
+				'corpus_id': corpusID,
+				'document_ids': JSON.stringify(documentIDs),
+				'ngram': ngramValue,
+				'scoring_method': scoringMethod
+			},
+			dataType: 'json',
+			success: function (data) {
+				console.log(data.list);
+				wordList = data.list;
+				createTable();
+			}
+		});
+	}
+	
+	function createTable() {
+		oTable = $("#example").DataTable( {
+			destroy: true,
+			data: wordList,
+			columns: [
+				{ "data": "word", "title": "Word" },
+				{ "data": "freq", "title": "Frequency" },
+				{ "data": "exclude_reason", "title": "Excluded?" },
+			],
+			scrollY: "400px",
+			paging: false,
+			scrollCollapse: true,
+		} );
+	}
+</script>
+</head>
+<body>
+Select Corpus:
+<select id="corpus_dropdown" onchange="corpus_selected()">
+	{% for corpus in corpora %}
+		<option value="{{corpus.id}}"> {{corpus.name}} </option>
+	{% endfor %}
+</select>
+<select multiple id="document_dropdown">
+
+</select>
+<select id="ngram_dropdown">
+	<option value="1">1-gram</option>
+	<option value="2">2-gram</option>
+	<option value="3">3-gram</option>
+</select>
+<select id="score_dropdown">
+    <option value="student_t"> student_t </option>
+    <option value="chi_sq"> chi_sq </option>
+    <option value="pmi" selected> pmi </option>
+    <option value="likelihood_ratio"> likelihood_ratio </option>
+    <option value="poisson_stirling"> poisson_stirling </option>
+    <option value="jaccard"> jaccard </option>
+</select>
+<input type="button" value="Generate Word Cloud" onclick="nltk_generate_wordcloud()">
+<hr />
+
+<div id="loadingdiv">
+<p id="loading"><img src="{{ STATIC_URL }}img/loading.gif" /></p>
+<p id="wordcloudinfo"></p>
+<hr />
+</div>
+<div id="outputdiv">
+<p id="outputtext"></p>
+<hr />
+</div>
+
+<div id="canvasdiv">
+<canvas id="canvas" width="800" height="600">
+This text is displayed if your browser does not support HTML5 Canvas.
+</canvas>
+</div>
+<br />
+<hr />
+<div id="demo">
+<table cellpadding="0" cellspacing="0" border="0" class="display" id="example" width="100%">
+</table>
+</div>
+<br />
+</body>
+</html>

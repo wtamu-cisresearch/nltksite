@@ -1,0 +1,494 @@
+{% load dajaxice_templatetags %}
+<html>
+<head>
+<title> NLTK Command Center </title>
+{% dajaxice_js_import %}
+<link href="{{ STATIC_URL }}css/menu.css" rel="stylesheet" type="text/css">
+<style type="text/css" title="currentStyle">
+	@import "{{ STATIC_URL }}css/demo_page.css";
+	@import "{{ STATIC_URL }}css/demo_table.css";
+</style>
+<style type="text/css">
+select#document_dropdown { display: none; }
+#outputdiv { display: none; }
+#loadingdiv { display: none; }
+#canvas { border: 1px solid black; }
+</style>
+<script type="text/javascript" charset="utf-8">
+	var wordList = [];
+	var activateMenu = false;
+	var oTable;
+	var canvasData;
+</script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.wordcloud.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/menu.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/highlight.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+	document.addEventListener("DOMContentLoaded", init, false);
+	
+	function init() {
+		if ($.wordCloudSupported) {
+			//alert("word cloud support");
+		} else {
+			//alert("word cloud not support");
+		}
+		InitContext(); // menu.js initialization
+		var canvas = document.getElementById("canvas");
+		var ctx = canvas.getContext("2d");
+		ctx.canvas.width = window.innerWidth - 30;
+		//canvas.addEventListener("mousedown", getPosition, false);
+		$("#canvas").mousedown(function(e){
+			CloseContext();
+			var x = e.pageX - this.offsetLeft;
+			var y = e.pageY - this.offsetTop;
+			console.log("Clicked Canvas. Coords: (" + x + ", " + y + ")");
+			if (wordMap[x] != undefined && wordMap[x][y] != undefined) {
+				console.log("You clicked ", wordMap[x][y]);
+				$("#wordID").text(wordMap[x][y]);
+				$("#word_count").text("Frequency: " + pixelMap[wordMap[x][y]].frequency);
+				$("#font_size").text("Font Size: " + pixelMap[wordMap[x][y]].fontSize);
+				Dajaxice.nltkapp.wordnet_data(callback_wordnet, {'words': [wordMap[x][y]]});
+				activateMenu = true;
+			} else {
+				activateMenu = false;
+			}
+		});
+		
+		$("#show_sentences").click(function () {
+			CloseContext();
+			var ourWord = document.getElementById("wordID").innerHTML; 
+			var corpusID = getCorpus();
+			var documentIDs = getDocuments();
+			$("#loadingdiv").show();
+			$("#loading").show();
+			Dajaxice.nltkapp.get_sentences(callback_show_sentences, {'corpus_id': corpusID, 'document_ids': documentIDs, 'word': ourWord});
+		});
+		
+		$("#exclude_word").click(function () {
+			CloseContext();
+			if (wordList.length > 0) {
+				var word = document.getElementById("wordID").innerHTML;
+				for (var i = 0; i < wordList.length; i++) {
+					if (word.localeCompare(wordList[i].word) == 0) {
+						wordList[i].exclude = 2; // exclude code 2 means excluded by user
+						prepare_word_cloud();
+						break;
+					}
+				}
+			}
+		});
+		
+        //jquery is awesome
+		$("#example tbody tr").live('click', function( e ) {
+			var data = oTable.fnGetData(this);
+			console.debug("Clicked a row: " + JSON.stringify(data));
+			if ( $(this).hasClass('row_selected') ) {
+				$(this).removeClass('row_selected');
+				// If the word is not excluded, unhiglight it
+				if (data.exclude == 0) {
+					highlightWord(data.word, false);
+				}				
+			}
+			else {
+				oTable.$('tr.row_selected').removeClass('row_selected');
+				$(this).addClass('row_selected');
+				// If the word is not excluded, highlight it
+				if (data.exclude == 0) {
+					highlightWord(data.word, true)
+				}
+			}
+		});
+		
+		$(".excludeCheckbox").live('click', function( e ) {
+			console.log("clicked checkbox " + $(this).val() + ". Checked? " + $(this).is(':checked') );
+			if ($(this).is(':checked') && wordList[$(this).val()].exclude == 0) {
+				wordList[$(this).val()].exclude = 2; // exclude code 2 means user excluded
+			} else {
+				wordList[$(this).val()].exclude = 0;
+			}
+		});
+		
+		// Retrieve state
+		wordList = localStorage["wordList"] == null ? [] : JSON.parse(localStorage["wordList"]);
+		if (localStorage["canvasImg"] != null && localStorage["redraw"] != true) {
+			img = new Image();
+			img.onload = function() {
+				ctx.drawImage(img, 0, 0, img.width, img.height);
+				canvasData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+			}
+			img.src = localStorage["canvasImg"];
+		}
+		//wordMap = localStorage["wordMap"] == null ? {} : JSON.parse(localStorage["wordMap"]);
+		if (localStorage["pixelMap"] != null) {
+			pixelMap = JSON.parse(localStorage["pixelMap"]);
+			wordMap = {}
+			for (var word in pixelMap) {
+				if (pixelMap.hasOwnProperty(word)) {
+					gx = Math.ceil(pixelMap[word].x);
+					gy = Math.ceil(pixelMap[word].y);
+					w = Math.ceil(pixelMap[word].width);
+					h = Math.ceil(pixelMap[word].height);
+					for (var x = gx; x < gx + w; x++) {
+						if (wordMap[x] == undefined) wordMap[x] = {};
+						for (var y = gy; y < gy + h; y++) {
+							wordMap[x][y] = word;
+						}
+					}
+				}
+			}
+		} else {
+			pixelMap = {}
+		}
+		
+		if (wordList.length > 0) {
+			createTable();
+		}
+		
+		corpus_selected();
+		if (localStorage["redraw"] == true) {
+			localStorage["redraw"] = 0;
+			redrawWordCloud()
+		}
+			
+	}
+	
+	function saveCanvas() {
+		var canvas = document.getElementById("canvas");
+		localStorage["canvasImg"] = canvas.toDataURL();
+	}
+	
+	function saveData() {
+		localStorage["wordList"] = JSON.stringify(wordList);
+		//localStorage["wordMap"] = JSON.stringify(wordMap);
+		localStorage["pixelMap"] = JSON.stringify(pixelMap);
+	}
+	
+	/* This is called when you click the redraw word cloud button. 
+	 * It will redraw the word cloud based on what you excluded/included from the table
+	 */
+	function redrawWordCloud()
+	{
+		/*
+		var checkedWords = $('input:checkbox:checked.excludeCheckbox').map(function () {
+			return this.value;
+		}).get();
+		console.log("Going to redraw wordcloud with following words excluded: " + checkedWords);
+		for (var i = 0; i < checkedWords.length; i++) {
+			if (wordList[checkedWords[i]].exclude == 0) {
+				wordList[checkedWords[i]].exclude = 2; // excluded by user
+			}
+		}
+		*/
+		prepare_word_cloud();
+	}
+	
+	function highlightWord(word, highlight) {
+		var canvas = document.getElementById("canvas");
+		if (!canvas.getContext) return;
+		var ctx = canvas.getContext("2d");
+		ctx.putImageData(canvasData, 0, 0);
+		if (!highlight) return;
+		ctx.strokeStyle = "#FFFF00";
+		ctx.lineWidth = 5;
+		ctx.strokeRect(pixelMap[word].x, pixelMap[word].y, pixelMap[word].width, pixelMap[word].height);
+		saveCanvas();
+	}
+	
+	function getCorpus()
+	{
+		var selectElement = document.getElementById("corpus_dropdown");
+		return selectElement.options[selectElement.selectedIndex].value;
+	}
+	
+	function getDocuments()
+	{
+		var documentIDs = [];
+		selectElement = document.getElementById("document_dropdown");
+		for (var i = 0; i < selectElement.options.length; i++) {
+			if (selectElement.options[i].selected) {
+				documentIDs.push(selectElement.options[i].value);
+			}
+		}
+		return documentIDs;
+	}
+	/*
+	function getPosition(event)
+	{
+		CloseContext();
+		var x = new Number();
+		var y = new Number();
+		var canvas = document.getElementById("canvas");
+
+		if (event.x != undefined && event.y != undefined) {
+			x = event.x;
+			y = event.y;
+		} else {
+			x = event.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
+			y = event.clientY + document.body.scrollTop + document.documentElement.scrollTop;
+		}
+
+		x -= canvas.offsetLeft;
+		y -= canvas.offsetTop;
+		if (wordMap[x] != undefined && wordMap[x][y] != undefined) {
+			console.log("You clicked ", wordMap[x][y]);
+			$("#wordID").text(wordMap[x][y]);
+			$("#word_count").text("Frequency: " + pixelMap[wordMap[x][y]].frequency);
+			$("#font_size").text("Font Size: " + pixelMap[wordMap[x][y]].fontSize);
+			Dajaxice.nltkapp.wordnet_data(callback_wordnet, {'words': [wordMap[x][y]]});
+			activateMenu = true;
+		} else {
+			activateMenu = false;
+		}
+	}
+	*/
+	function testmessage() {
+		alert("Testing from index.html");
+		Dajaxice.nltkapp.sayhello(callback_sayhello);
+	}
+	
+	function callback_sayhello(data) {
+		alert(data.message);
+	}
+	
+	function corpus_selected() {
+		var selectElement = document.getElementById("corpus_dropdown");
+        var value = selectElement.options[selectElement.selectedIndex].value;
+		if (value == -1) return;
+		Dajaxice.nltkapp.get_documents(callback_gotdocuments, {'corpus_id': value});
+	}
+	
+	function callback_gotdocuments(data) {
+		// alert(JSON.stringify(data.documents, null, '\t'));
+		var options = "<option value=\"-1\" selected> Entire Corpus </option>\n";
+		for (var i = 0; i < data.documents.length; i++) {
+			// alert(data.documents[i].id);
+			var docName = data.documents[i].name.split("/");
+			options += "<option value=\"" + data.documents[i].id + "\"> " + docName[docName.length-1] + " </option>\n";
+		}
+		$("#document_dropdown").html(options);
+		$("#document_dropdown").show();
+	}
+	
+	/* Generate Wordcloud */
+    function nltk_generate_wordcloud() {
+        var corpusID = getCorpus();
+		var documentIDs = getDocuments();
+		
+		/* Get N-Gram Value */
+		selectElement = document.getElementById("ngram_dropdown");
+        var ngramValue = selectElement.options[selectElement.selectedIndex].value;
+		
+		/* Get Scoring Method */
+		selectElement = document.getElementById("score_dropdown");
+        var scoringMethod = selectElement.options[selectElement.selectedIndex].value;
+		
+		//alert("Going to generate a word cloud with the following options:\ncorpusID: " + corpusID + "\ndocumentIDs: " + documentIDs + "\nN-Gram Value: " + ngramValue + "\nScoring Method: " + scoringMethod);
+		$("#outputdiv").hide();
+		$("#loadingdiv").show();
+		$("#loading").show();
+		Dajaxice.nltkapp.wordfreq(callback_generate_wordcloud, {'corpus_id': corpusID, 'document_ids': documentIDs, 'ngram': ngramValue, 'scoring_method': scoringMethod});
+	}
+	
+	function callback_generate_wordcloud(data) {
+		wordList = data.list;
+		prepare_word_cloud();
+	}
+	
+	function prepare_word_cloud() {
+		var gridSize = 10;
+		var weightFactor = 8;
+		var minSize = 8;
+		var attempts = 0;
+		var wordPlacementAbort = true;
+		wordTable = [];
+		console.log("Minimum font size: ", $.miniumFontSize);
+		$("#outputdiv").hide();
+		$("#loadingdiv").show();
+		$("#loading").show();
+		$("#canvas").unbind('wordcloudabort');
+		$("#canvas").bind('wordcloudabort', function () {
+			wordTable = [];
+			weightFactor = weightFactor / 2;
+			if (weightFactor == 1) {
+				wordPlacementAbort = false;		
+			}
+			attempts++;
+			console.log("Redrawing word cloud (attempt ", attempts, ") with weightFactor ", weightFactor);
+			draw_word_cloud(gridSize, weightFactor, minSize, wordPlacementAbort);
+		});
+		
+		if (attempts == 0) {
+			$("canvas").unbind('wordcloudstop');
+			$("canvas").bind('wordcloudstop', function() {
+				console.log("Word Cloud Stopped");
+				stopTime = new Date();
+				var diff = stopTime - startTime;
+				diff = diff / 1000;
+				$("#wordcloudinfo").html("Finished in " + diff + " sec");
+				$("#loading").hide();
+				/* Add a click handler to the rows - this could be used as a callback */
+				createTable();
+								
+				var canvas = document.getElementById("canvas");
+				if (!canvas.getContext) return;
+				var ctx = canvas.getContext("2d");
+				canvasData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+				saveCanvas();
+				saveData();
+			});
+			startTime = new Date();
+		}
+		
+		attempts++;
+		console.log("Drawing word cloud (attempt ", attempts, ") with weightFactor ", weightFactor);
+		draw_word_cloud(gridSize, weightFactor, minSize, wordPlacementAbort);
+	}
+	
+	function draw_word_cloud(gridSize, weightFactor, minSize, wordPlacementAbort) {
+		$("#canvas").wordCloud({
+			gridSize: gridSize,
+			weightFactor: function(pt) { return weightFactor*pt+(minSize - weightFactor) },
+			//minSize: minSize,
+			wordList: wordList,
+			wordPlacementAbort: wordPlacementAbort
+		});
+	}
+	
+	/* Show Sentences */
+	function callback_show_sentences(data) {
+		var result_html = "<p id=\"outputtext\">";
+		for (var document in data.wdmatrix) {
+			if (data.wdmatrix.hasOwnProperty(document)) {
+				result_html = result_html + "<br><u><b>" + document + "</u></b><br>";
+				for (var i = 0; i < data.wdmatrix[document].length; i++) {
+					result_html = result_html + data.wdmatrix[document][i] + "<br>";
+				}
+			}
+		}
+		result_html = result_html + "<\/p>"
+		$("#outputtext").html(result_html);
+		$("#loadingdiv").hide();
+		var junk = '<html><head><script type="text/javascript" src="{{ STATIC_URL }}js/highlight.js"><\/script></head> \
+			<body onload="highlightSearchTerms(\'' + data.word + '\', true)">';
+		
+		var w = window.open();
+		w.document.write(junk + result_html + "</body></html>");
+		w.document.close();
+		//$("#outputdiv").show();
+		//highlightSearchTerms(data.word, true);
+	}
+   
+	function nltk_call_wordnet(words) {
+		Dajaxice.nltkapp.wordnet_data(callback_wordnet, {'words': words});
+	}
+	
+	function callback_wordnet(data) {
+		//activateMenu = true;
+		$("#pos").text("POS: " + data.results[0].pos);
+		$("#def").text("Definition: " + data.results[0].definition);
+		$("#synonyms").text("Synonyms: " + data.results[0].synonyms);
+		console.log(data);
+	}
+	
+	function createTable() {
+		oTable = $('#example').dataTable( {
+					"bDestroy": true,
+					"aaData": wordList,
+					"aoColumnDefs": [
+						{ aTargets: [2],
+						  fnRender: function (o,v) {
+							//console.log(JSON.stringify(o));
+							if (o.aData.exclude == 0) { // Word is not excluded
+								return 'No <input type="checkbox" class="excludeCheckbox" value="' + o.iDataRow + '">';
+							} else if (o.aData.exclude == 1) { // Word is excluded because it cannot fit in the wordcloud
+								return 'Yes - Word cannot fit in word cloud <input type="checkbox" class="excludeCheckbox" value="' + o.iDataRow + '" checked disabled>';
+							} else if (o.aData.exclude == 2) { // Word is excluded manually by user
+								return 'Yes - Word excluded by user <input type="checkbox" class="excludeCheckbox" value="' + o.iDataRow + '" checked>';
+							} else {
+								return 'Yes - Word is excluded <input type="checkbox" class="excludeCheckbox" value="' + o.iDataRow + '" checked>';
+							}		
+						  }
+						}],
+					"aoColumns": [
+						{ "mData": "word", "sTitle": "Word" },
+						{ "mData": "freq", "sTitle": "Frequency" },
+						{ "mData": "exclude_reason", "sTitle": "Excluded?" },
+					],
+					"sScrollY": "400px",
+					"bPaginate": false,
+					"bScrollCollapse": true,
+				} );
+	}
+</script>
+</head>
+<body>
+<!-- menu.js menu div -->
+<div id="divContext" style="border: 1px solid blue; display: none; position: absolute; z-index:1000;">
+	<ul class="cmenu">
+		<li id="wordID">Word Goes Here</li>
+		<li id="word_count">Word Count</li>
+		<li id="pos">Part of Speech</li>
+		<li id="def">Definition</li>
+		<li id="synonyms">Synonyms</li>
+		<li id="font_size"></li>
+		<li class="topSep"> </li>
+		<li><a id="show_sentences" href="#">Show sentences</a></li>
+		<li><a id="exclude_word" href="#">Exclude word</a></li>
+	</ul>
+</div>
+
+Select Corpus:
+<select id="corpus_dropdown" onchange="corpus_selected()">
+	{% for corpus in corpora %}
+		<option value="{{corpus.id}}"> {{corpus.name}} </option>
+	{% endfor %}
+</select>
+<select multiple id="document_dropdown">
+
+</select>
+<select id="ngram_dropdown">
+	<option value="1">1-gram</option>
+	<option value="2">2-gram</option>
+	<option value="3">3-gram</option>
+</select>
+<select id="score_dropdown">
+    <option value="student_t"> student_t </option>
+    <option value="chi_sq"> chi_sq </option>
+    <option value="pmi" selected> pmi </option>
+    <option value="likelihood_ratio"> likelihood_ratio </option>
+    <option value="poisson_stirling"> poisson_stirling </option>
+    <option value="jaccard"> jaccard </option>
+</select>
+<input type="button" value="Generate Word Cloud" onclick="nltk_generate_wordcloud()">
+<hr />
+
+<div id="loadingdiv">
+<p id="loading"><img src="{{ STATIC_URL }}img/loading.gif" /></p>
+<p id="wordcloudinfo"></p>
+<hr />
+</div>
+<div id="outputdiv">
+<p id="outputtext"></p>
+<hr />
+</div>
+
+<div id="canvasdiv">
+<canvas id="canvas" width="800" height="600">
+This text is displayed if your browser does not support HTML5 Canvas.
+</canvas>
+</div>
+<br />
+<hr />
+<div id="demo">
+<table cellpadding="0" cellspacing="0" border="0" class="display" id="example" width="100%">
+</table>
+</div>
+<br />
+<input type="button" value="Redraw Word Cloud" onclick="redrawWordCloud()">
+<form method="link" action="#" target="_blank">
+<input type="submit" value="Redraw in new Window" onclick="localStorage['redraw'] = 1; saveData();">
+</form>
+</body>
+</html>

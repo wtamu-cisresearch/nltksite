@@ -1,0 +1,33 @@
+[2016-10-01 14:43:53,508] [DEBUG] views.py:index:27 index requested.
+[2016-10-01 14:43:53,694] [DEBUG] views.py:getdocuments:39 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-01 14:43:57,026] [DEBUG] views.py:wordfreq:86 corpus_id=1, document_ids=['1'], ngram=1, scoring_method=pmi
+[2016-10-01 14:43:57,034] [DEBUG] views.py:wordfreq:94 PlaintextCorpusReader on files: ['Facebook_Data_Use_Policy.txt']
+[2016-10-01 14:43:57,035] [ERROR] exception.py:handle_uncaught_exception:124 Internal Server Error: /nltkapp/wordfreq/
+Traceback (most recent call last):
+  File "C:\Python34\lib\site-packages\django\core\handlers\exception.py", line 39, in inner
+    response = get_response(request)
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python34\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Kareem\Documents\Django\nltksite\nltkapp\views.py", line 97, in wordfreq
+    return onegram_collocation(words)
+  File "C:\Users\Kareem\Documents\Django\nltksite\nltkapp\views.py", line 116, in onegram_collocation
+    fdist = nltk.FreqDist(words)
+  File "C:\Python34\lib\site-packages\nltk\probability.py", line 106, in __init__
+    Counter.__init__(self, samples)
+  File "C:\Python34\lib\collections\__init__.py", line 475, in __init__
+    self.update(*args, **kwds)
+  File "C:\Python34\lib\collections\__init__.py", line 562, in update
+    _count_elements(self, iterable)
+  File "C:\Python34\lib\site-packages\nltk\corpus\reader\util.py", line 291, in iterate_from
+    tokens = self.read_block(self._stream)
+  File "C:\Python34\lib\site-packages\nltk\corpus\reader\plaintext.py", line 117, in _read_word_block
+    words.extend(self._word_tokenizer.tokenize(stream.readline()))
+  File "C:\Python34\lib\site-packages\nltk\tokenize\regexp.py", line 128, in tokenize
+    return self._regexp.findall(text)
+TypeError: can't use a string pattern on a bytes-like object
+[2016-10-01 14:48:30,355] [DEBUG] views.py:index:27 index requested.
+[2016-10-01 14:48:30,480] [DEBUG] views.py:getdocuments:39 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-01 14:48:32,452] [DEBUG] views.py:wordfreq:86 corpus_id=1, document_ids=['1'], ngram=1, scoring_method=pmi
+[2016-10-01 14:48:32,460] [DEBUG] views.py:wordfreq:94 PlaintextCorpusReader on files: ['Facebook_Data_Use_Policy.txt']
