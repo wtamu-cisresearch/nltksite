@@ -17,6 +17,9 @@ logger = logging.getLogger('nltksite.nltkapp')
 def clearencoding(str):
 	try:
 		json.dumps(str)
+		if len(str) == 1 and ord(str) > 128:
+			logger.warn("Unicode Error on str='%s' code=%s Skipping" % (repr(str), ord(str)))
+			str = ""
 	except UnicodeDecodeError:
 		logger.warn("Unicode Error on str='%s' code=%s Skipping" % (str, repr(str)))
 		str = str.decode('utf8', 'ignore')
