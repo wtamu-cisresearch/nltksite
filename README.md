@@ -10,3 +10,5 @@ Setup Instructions
 (3) Install NLTK 3.2.1 minimum
 
 (4) Install NLTK Data
+
+(5) [Optional] Visual Studio 2015 with Python Tools For Visual Studio (PTVS) if you want to edit inside Visual Studio IDE
