@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1207516b-76ed-44a4-9659-e09cd3cf2c0d}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>manage.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Django launcher</LaunchProvider>
+    <InterpreterId />
+    <InterpreterVersion />
+    <UseIISExpress>true</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="manage.py" />
+    <Compile Include="nltkapp\admin.py" />
+    <Compile Include="nltkapp\apps.py" />
+    <Compile Include="nltkapp\migrations\0001_initial.py" />
+    <Compile Include="nltkapp\migrations\__init__.py" />
+    <Compile Include="nltkapp\models.py" />
+    <Compile Include="nltkapp\tests.py" />
+    <Compile Include="nltkapp\urls.py" />
+    <Compile Include="nltkapp\views.py" />
+    <Compile Include="nltkapp\__init__.py" />
+    <Compile Include="nltksite\settings.py" />
+    <Compile Include="nltksite\urls.py" />
+    <Compile Include="nltksite\wsgi.py" />
+    <Compile Include="nltksite\__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="data\corpora\EULACorpus\Facebook_Data_Use_Policy.txt" />
+    <Content Include="data\corpora\EULACorpus\google_privacy_policy.txt" />
+    <Content Include="nltkapp\static\DataTables\DataTables-1.10.12\css\dataTables.bootstrap.css" />
+    <Content Include="nltkapp\static\DataTables\DataTables-1.10.12\css\dataTables.bootstrap.min.css" />
+    <Content Include="nltkapp\static\DataTables\DataTables-1.10.12\css\dataTables.foundation.css" />
+    <Content Include="nltkapp\static\DataTables\DataTables-1.10.12\css\dataTables.foundation.min.css" />
+    <Content Include="nltkapp\static\DataTables\DataTables-1.10.12\css\dataTables.jqueryui.css" />
+    <Content Include="nltkapp\static\DataTables\DataTables-1.10.12\css\dataTables.jqueryui.min.css" />
+    <Content Include="nltkapp\static\DataTables\DataTables-1.10.12\css\jquery.dataTables.css" />
+    <Content Include="nltkapp\static\DataTables\DataTables-1.10.12\css\jquery.dataTables.min.css" />
+    <Content Include="nltkapp\static\DataTables\DataTables-1.10.12\css\jquery.dataTables_themeroller.css" />
+    <Content Include="nltkapp\static\DataTables\DataTables-1.10.12\images\sort_asc.png" />
+    <Content Include="nltkapp\static\DataTables\DataTables-1.10.12\images\sort_asc_disabled.png" />
+    <Content Include="nltkapp\static\DataTables\DataTables-1.10.12\images\sort_both.png" />
+    <Content Include="nltkapp\static\DataTables\DataTables-1.10.12\images\sort_desc.png" />
+    <Content Include="nltkapp\static\DataTables\DataTables-1.10.12\images\sort_desc_disabled.png" />
+    <Content Include="nltkapp\static\DataTables\DataTables-1.10.12\js\dataTables.bootstrap.js" />
+    <Content Include="nltkapp\static\DataTables\DataTables-1.10.12\js\dataTables.bootstrap.min.js" />
+    <Content Include="nltkapp\static\DataTables\DataTables-1.10.12\js\dataTables.foundation.js" />
+    <Content Include="nltkapp\static\DataTables\DataTables-1.10.12\js\dataTables.foundation.min.js" />
+    <Content Include="nltkapp\static\DataTables\DataTables-1.10.12\js\dataTables.jqueryui.js" />
+    <Content Include="nltkapp\static\DataTables\DataTables-1.10.12\js\dataTables.jqueryui.min.js" />
+    <Content Include="nltkapp\static\DataTables\DataTables-1.10.12\js\jquery.dataTables.js" />
+    <Content Include="nltkapp\static\DataTables\DataTables-1.10.12\js\jquery.dataTables.min.js" />
+    <Content Include="nltkapp\static\DataTables\datatables.css" />
+    <Content Include="nltkapp\static\DataTables\datatables.js" />
+    <Content Include="nltkapp\static\DataTables\datatables.min.css" />
+    <Content Include="nltkapp\static\DataTables\datatables.min.js" />
+    <Content Include="nltkapp\static\js\jquery-3.1.1.js" />
+    <Content Include="nltkapp\templates\nltkapp\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="data\" />
+    <Folder Include="data\corpora\" />
+    <Folder Include="data\corpora\EULACorpus" />
+    <Folder Include="nltkapp" />
+    <Folder Include="nltkapp\migrations" />
+    <Folder Include="nltkapp\static\" />
+    <Folder Include="nltkapp\static\DataTables" />
+    <Folder Include="nltkapp\static\DataTables\DataTables-1.10.12\" />
+    <Folder Include="nltkapp\static\DataTables\DataTables-1.10.12\css" />
+    <Folder Include="nltkapp\static\DataTables\DataTables-1.10.12\images" />
+    <Folder Include="nltkapp\static\DataTables\DataTables-1.10.12\js" />
+    <Folder Include="nltkapp\static\js" />
+    <Folder Include="nltkapp\templates\" />
+    <Folder Include="nltkapp\templates\nltkapp" />
+    <Folder Include="nltksite" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:4020/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>True</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
