@@ -4,6 +4,7 @@
 <title> NLTK Command Center </title>
 <link rel="stylesheet" type="text/css" href="{% static 'DataTables/datatables.min.css' %}"/>
 <style type="text/css">
+#loadingdiv { display: none; }
 #outputdiv { display: none; }
 #canvas { border: 1px solid black; }
 </style>
@@ -47,6 +48,51 @@
 		return documentIDs;
 	}
 	
+	// Called when you click a word in the wordCloud.
+	// This function will display the wordNet info and show sentences
+	function clickedWord(item) {
+		$("#outputdiv").hide();
+		$("#loadingdiv").show();
+		var corpusID = $("#corpus_dropdown option:selected").val();
+		var documentIDs = getDocuments();
+		$.ajax({
+			url: '/nltkapp/wordnet_data/',
+			data: {'words': JSON.stringify([item.word])},
+			dataType: 'json',
+			success: function(data) {
+				$("#root").text("Root Word: " + data.results[0].root);
+				$("#pos").text("Part of Speech: " + data.results[0].pos);
+				$("#definition").text("Definition: " + data.results[0].definition);
+				$("#synonyms").text("Synonyms: " + data.results[0].synonyms);
+				// Show Sentences here
+				$.ajax({
+					url: '/nltkapp/get_sentences/',
+					data: {
+						'corpus_id': corpusID,
+						'document_ids': JSON.stringify(documentIDs),
+						'word': item.word
+					},
+					dataType: 'json',
+					success: function(sdata) {
+						console.log("sdata: " + sdata);
+						var result_html = "<p>";
+						for (var document in sdata.wdmatrix) {
+							if (sdata.wdmatrix.hasOwnProperty(document)) {
+								result_html = result_html + "<br><u><b>" + document + "</u></b><br>";
+								for (var i = 0; i < sdata.wdmatrix[document].length; i++) {
+									result_html = result_html + sdata.wdmatrix[document][i] + "<br>";
+								}
+							}
+						}
+						result_html = result_html + "</p>";
+						$("#sentences").html(result_html);
+						$("#loadingdiv").hide();
+						$("#outputdiv").show();						
+					}
+				});
+			}
+		});
+	}
 	function nltk_generate_wordcloud() {
 		var corpusID = $("#corpus_dropdown option:selected").val();
 		var documentIDs = getDocuments();
@@ -80,6 +126,8 @@
 	}
 	
 	function drawWordCloud() {
+		$("#loadingdiv").hide();
+		$("#outputdiv").hide();
 		$('#canvas').off('wordcloudstop');
 		$('#canvas').on('wordcloudstop', function() {
 			console.log("Word Cloud Stopped");
@@ -91,7 +139,8 @@
 				gridSize: 18,
 				weightFactor: 3,
 				click: function(item) {
-					console.log(item.word + ': ' + item.weight);
+					console.log('Clicked word: ' + item.word + ': ' + item.weight);
+					clickedWord(item);
 				},
 			} );
 	}
@@ -181,15 +230,21 @@ Select Corpus:
 </select>
 <input type="button" value="Generate Word Cloud" onclick="nltk_generate_wordcloud()">
 <hr />
-<!--
+
 <div id="loadingdiv">
 <p id="loading"><img src="{% static 'img/loading.gif' %}" /></p>
 <p id="wordcloudinfo"></p>
 <hr />
 </div>
--->
+
 <div id="outputdiv">
-<p id="outputtext"></p>
+<p id="outputtext">
+<span id="root"></span><br />
+<span id="pos"></span><br />
+<span id="definition"></span><br />
+<span id="synonyms"></span><br />
+<span id="sentences"></span>
+</p>
 <hr />
 </div>
 

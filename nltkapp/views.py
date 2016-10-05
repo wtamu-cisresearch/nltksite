@@ -199,19 +199,20 @@ def trigram_collocation(words, score):
 # Given an array of words, connect to wordnet and return the part of speech, definition, etc...
 def wordnet_data(request):
 	words = json.loads(request.GET.get('words', None))
+	logger.debug("wordnet_data words=%s" % str(words))
 	results = []
 	for w in words:
 		syns = wordnet.synsets(w)
 		if len(syns) > 0:
-			root_word = syns[0].lemmas[0].name
-			pos = syns[0].pos
-			definition = syns[0].definition
+			root_word = syns[0].lemmas()[0].name()
+			pos = syns[0].pos()
+			definition = syns[0].definition()
 			synonyms = ''
 			for syn in syns:
-				if (syn.lemmas[0].name != root_word):
-					synonyms += syn.lemmas[0].name + ', '
+				if (syn.lemmas()[0].name() != root_word):
+					synonyms += syn.lemmas()[0].name() + ', '
 			
-			examples = syns[0].examples
+			examples = syns[0].examples()
 			results.append({'word': w,
 					'root': root_word,
 					'pos': pos,
