@@ -321,3 +321,6 @@ __pycache__/
 
 ### VisualStudio Patch ###
 build/
+
+# NLTK Logs
+logs/nltksite.log
