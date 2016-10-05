@@ -1,0 +1,418 @@
+[2016-10-05 09:48:33,295] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 09:48:34,255] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 09:48:53,968] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['1'], ngram=1, scoring_method=pmi
+[2016-10-05 09:48:53,977] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['Facebook_Data_Use_Policy.txt']
+[2016-10-05 09:48:54,224] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x94'' code=148 Skipping
+[2016-10-05 09:48:54,224] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x94'' code=148 Skipping
+[2016-10-05 09:48:54,262] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x93'' code=147 Skipping
+[2016-10-05 09:48:54,262] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x93'' code=147 Skipping
+[2016-10-05 09:48:54,268] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 09:48:54,269] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 09:50:47,680] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 09:50:47,887] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 09:50:50,319] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['1'], ngram=1, scoring_method=pmi
+[2016-10-05 09:50:50,326] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['Facebook_Data_Use_Policy.txt']
+[2016-10-05 09:50:50,524] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x94'' code=148 Skipping
+[2016-10-05 09:50:50,524] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x94'' code=148 Skipping
+[2016-10-05 09:50:50,559] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x93'' code=147 Skipping
+[2016-10-05 09:50:50,559] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x93'' code=147 Skipping
+[2016-10-05 09:50:50,565] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 09:50:50,566] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 10:00:47,065] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 10:00:47,261] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 10:00:49,008] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['2'], ngram=1, scoring_method=pmi
+[2016-10-05 10:00:49,015] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['google_privacy_policy.txt']
+[2016-10-05 10:00:49,192] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 10:00:49,192] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 10:00:49,194] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 10:00:49,194] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 10:02:45,638] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 10:02:45,843] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 10:06:49,947] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['-1'], ngram=1, scoring_method=pmi
+[2016-10-05 10:06:49,953] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['Facebook_Data_Use_Policy.txt', 'google_privacy_policy.txt']
+[2016-10-05 10:06:50,222] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 10:06:50,222] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 10:06:50,243] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x94'' code=148 Skipping
+[2016-10-05 10:06:50,243] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x94'' code=148 Skipping
+[2016-10-05 10:06:50,267] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x93'' code=147 Skipping
+[2016-10-05 10:06:50,267] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x93'' code=147 Skipping
+[2016-10-05 10:06:50,290] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 10:06:50,290] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 10:08:37,398] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 10:08:37,616] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 10:08:41,763] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['2'], ngram=1, scoring_method=pmi
+[2016-10-05 10:08:41,766] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['google_privacy_policy.txt']
+[2016-10-05 10:08:41,918] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 10:08:41,918] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 10:08:41,920] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 10:08:41,920] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 10:09:23,065] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 10:09:23,263] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 10:09:24,390] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['2'], ngram=1, scoring_method=pmi
+[2016-10-05 10:09:24,396] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['google_privacy_policy.txt']
+[2016-10-05 10:09:24,569] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 10:09:24,569] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 10:09:24,571] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 10:09:24,571] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 10:09:24,860] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['2'], ngram=1, scoring_method=pmi
+[2016-10-05 10:09:24,865] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['google_privacy_policy.txt']
+[2016-10-05 10:09:25,040] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 10:09:25,040] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 10:09:25,042] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 10:09:25,042] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 10:10:03,049] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 10:10:03,255] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 10:10:04,724] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['2'], ngram=1, scoring_method=pmi
+[2016-10-05 10:10:04,731] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['google_privacy_policy.txt']
+[2016-10-05 10:10:04,929] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 10:10:04,929] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 10:10:04,931] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 10:10:04,931] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 10:15:16,517] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 10:15:16,727] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 10:15:18,355] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['2'], ngram=1, scoring_method=pmi
+[2016-10-05 10:15:18,357] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['google_privacy_policy.txt']
+[2016-10-05 10:15:18,507] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 10:15:18,508] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 10:15:18,509] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 10:15:18,510] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 10:15:30,766] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['1'], ngram=1, scoring_method=pmi
+[2016-10-05 10:15:30,773] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['Facebook_Data_Use_Policy.txt']
+[2016-10-05 10:15:30,992] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x94'' code=148 Skipping
+[2016-10-05 10:15:30,992] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x94'' code=148 Skipping
+[2016-10-05 10:15:31,030] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x93'' code=147 Skipping
+[2016-10-05 10:15:31,030] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x93'' code=147 Skipping
+[2016-10-05 10:15:31,037] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 10:15:31,037] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 10:16:00,562] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['1'], ngram=1, scoring_method=pmi
+[2016-10-05 10:16:00,565] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['Facebook_Data_Use_Policy.txt']
+[2016-10-05 10:16:00,749] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x94'' code=148 Skipping
+[2016-10-05 10:16:00,749] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x94'' code=148 Skipping
+[2016-10-05 10:16:00,787] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x93'' code=147 Skipping
+[2016-10-05 10:16:00,787] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x93'' code=147 Skipping
+[2016-10-05 10:16:00,794] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 10:16:00,794] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 10:16:31,154] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 10:16:31,354] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 10:16:34,046] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['1'], ngram=1, scoring_method=pmi
+[2016-10-05 10:16:34,056] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['Facebook_Data_Use_Policy.txt']
+[2016-10-05 10:16:34,283] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x94'' code=148 Skipping
+[2016-10-05 10:16:34,283] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x94'' code=148 Skipping
+[2016-10-05 10:16:34,318] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x93'' code=147 Skipping
+[2016-10-05 10:16:34,318] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x93'' code=147 Skipping
+[2016-10-05 10:16:34,324] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 10:16:34,324] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 10:16:49,780] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['2'], ngram=1, scoring_method=pmi
+[2016-10-05 10:16:49,790] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['google_privacy_policy.txt']
+[2016-10-05 10:16:49,951] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 10:16:49,951] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 10:16:49,953] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 10:16:49,953] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 10:17:51,853] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus Chat Corpus (id=6)
+[2016-10-05 10:17:52,917] [DEBUG] views.py:wordfreq:89 corpus_id=6, document_ids=['-1'], ngram=1, scoring_method=pmi
+[2016-10-05 10:17:52,950] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['10-19-20s_706posts.xml', '10-19-30s_705posts.xml', '10-19-40s_686posts.xml', '10-19-adults_706posts.xml', '10-24-40s_706posts.xml', '10-26-teens_706posts.xml', '11-06-adults_706posts.xml', '11-08-20s_705posts.xml', '11-08-40s_706posts.xml', '11-08-adults_705posts.xml', '11-08-teens_706posts.xml', '11-09-20s_706posts.xml', '11-09-40s_706posts.xml', '11-09-adults_706posts.xml', '11-09-teens_706posts.xml']
+[2016-10-05 10:19:45,747] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus Personals Corpus (id=9)
+[2016-10-05 10:19:46,748] [DEBUG] views.py:wordfreq:89 corpus_id=9, document_ids=['-1'], ngram=1, scoring_method=pmi
+[2016-10-05 10:19:46,763] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['firefox.txt', 'grail.txt', 'overheard.txt', 'pirates.txt', 'singles.txt', 'wine.txt']
+[2016-10-05 10:22:10,681] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 10:22:10,907] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 10:22:14,067] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['2'], ngram=1, scoring_method=pmi
+[2016-10-05 10:22:14,069] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['google_privacy_policy.txt']
+[2016-10-05 10:22:14,219] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 10:22:14,219] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 10:22:14,221] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 10:22:14,221] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 11:13:24,587] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 11:13:25,329] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 11:13:27,774] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['2'], ngram=1, scoring_method=pmi
+[2016-10-05 11:13:27,776] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['google_privacy_policy.txt']
+[2016-10-05 11:13:27,944] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 11:13:27,944] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 11:13:27,955] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 11:13:27,955] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 11:14:01,285] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 11:14:01,487] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 11:14:02,783] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['2'], ngram=1, scoring_method=pmi
+[2016-10-05 11:14:02,788] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['google_privacy_policy.txt']
+[2016-10-05 11:14:02,974] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 11:14:02,974] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 11:14:02,984] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 11:14:02,984] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 11:16:30,324] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 11:16:30,521] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 11:16:33,062] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['2'], ngram=1, scoring_method=pmi
+[2016-10-05 11:16:33,065] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['google_privacy_policy.txt']
+[2016-10-05 11:16:33,246] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 11:16:33,246] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 11:16:33,257] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 11:16:33,257] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 11:19:52,497] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 11:19:52,693] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 11:19:56,523] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['2'], ngram=1, scoring_method=pmi
+[2016-10-05 11:19:56,532] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['google_privacy_policy.txt']
+[2016-10-05 11:19:56,713] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 11:19:56,713] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 11:19:56,723] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 11:19:56,723] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 11:20:38,083] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 11:20:38,286] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 11:20:41,222] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['2'], ngram=1, scoring_method=pmi
+[2016-10-05 11:20:41,226] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['google_privacy_policy.txt']
+[2016-10-05 11:20:41,405] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 11:20:41,405] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 11:20:41,415] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 11:20:41,416] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 11:25:57,116] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 11:25:57,311] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 11:25:59,959] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['2'], ngram=1, scoring_method=pmi
+[2016-10-05 11:25:59,966] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['google_privacy_policy.txt']
+[2016-10-05 11:26:00,184] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 11:26:00,184] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 11:26:00,195] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 11:26:00,195] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 11:26:36,403] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['1'], ngram=1, scoring_method=pmi
+[2016-10-05 11:26:36,411] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['Facebook_Data_Use_Policy.txt']
+[2016-10-05 11:26:36,602] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x93'' code=147 Skipping
+[2016-10-05 11:26:36,602] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x93'' code=147 Skipping
+[2016-10-05 11:26:36,633] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 11:26:36,633] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 11:26:36,681] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x94'' code=148 Skipping
+[2016-10-05 11:26:36,681] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x94'' code=148 Skipping
+[2016-10-05 13:24:20,759] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 13:24:20,994] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 13:24:24,208] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['2'], ngram=1, scoring_method=pmi
+[2016-10-05 13:24:24,217] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['google_privacy_policy.txt']
+[2016-10-05 13:24:24,436] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 13:24:24,436] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 13:24:24,447] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 13:24:24,447] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 13:24:53,996] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 13:24:54,189] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 13:24:55,762] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['2'], ngram=1, scoring_method=pmi
+[2016-10-05 13:24:55,768] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['google_privacy_policy.txt']
+[2016-10-05 13:24:55,947] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 13:24:55,947] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 13:24:55,957] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 13:24:55,957] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 13:25:43,601] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 13:25:43,808] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 13:25:46,222] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['1'], ngram=1, scoring_method=pmi
+[2016-10-05 13:25:46,227] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['Facebook_Data_Use_Policy.txt']
+[2016-10-05 13:25:46,493] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x93'' code=147 Skipping
+[2016-10-05 13:25:46,493] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x93'' code=147 Skipping
+[2016-10-05 13:25:46,508] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x94'' code=148 Skipping
+[2016-10-05 13:25:46,508] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x94'' code=148 Skipping
+[2016-10-05 13:25:46,544] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 13:25:46,544] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 13:27:36,265] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 13:27:36,493] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 13:27:38,534] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['2'], ngram=1, scoring_method=pmi
+[2016-10-05 13:27:38,536] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['google_privacy_policy.txt']
+[2016-10-05 13:27:38,697] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 13:27:38,697] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 13:27:38,708] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 13:27:38,708] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 13:35:01,827] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 13:35:02,072] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 13:36:05,026] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 13:36:05,216] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 13:36:08,831] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['2'], ngram=1, scoring_method=pmi
+[2016-10-05 13:36:08,833] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['google_privacy_policy.txt']
+[2016-10-05 13:36:08,992] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 13:36:08,992] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 13:36:09,003] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 13:36:09,003] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 13:37:37,140] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 13:37:37,380] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 13:37:40,035] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['2'], ngram=1, scoring_method=pmi
+[2016-10-05 13:37:40,037] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['google_privacy_policy.txt']
+[2016-10-05 13:37:40,198] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 13:37:40,198] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 13:37:40,209] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 13:37:40,209] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 13:38:38,655] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 13:38:38,855] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 13:38:40,792] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['2'], ngram=1, scoring_method=pmi
+[2016-10-05 13:38:40,800] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['google_privacy_policy.txt']
+[2016-10-05 13:38:41,020] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 13:38:41,020] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 13:38:41,031] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 13:38:41,032] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 13:40:30,097] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 13:40:30,290] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 13:40:32,016] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['2'], ngram=1, scoring_method=pmi
+[2016-10-05 13:40:32,024] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['google_privacy_policy.txt']
+[2016-10-05 13:40:32,198] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 13:40:32,198] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 13:40:32,207] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 13:40:32,207] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 13:42:09,656] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 13:42:09,927] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 13:42:33,689] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['2'], ngram=1, scoring_method=pmi
+[2016-10-05 13:42:33,696] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['google_privacy_policy.txt']
+[2016-10-05 13:42:33,945] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 13:42:33,945] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 13:42:33,955] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 13:42:33,955] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 13:44:17,570] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 13:44:17,844] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 13:44:19,852] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['2'], ngram=1, scoring_method=pmi
+[2016-10-05 13:44:19,854] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['google_privacy_policy.txt']
+[2016-10-05 13:44:20,009] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 13:44:20,009] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 13:44:20,020] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 13:44:20,020] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 13:46:17,524] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 13:46:17,740] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 13:46:20,249] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['2'], ngram=1, scoring_method=pmi
+[2016-10-05 13:46:20,257] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['google_privacy_policy.txt']
+[2016-10-05 13:46:20,446] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 13:46:20,446] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 13:46:20,456] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 13:46:20,456] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 13:52:11,452] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 13:52:11,663] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 13:52:12,841] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['2'], ngram=1, scoring_method=pmi
+[2016-10-05 13:52:12,849] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['google_privacy_policy.txt']
+[2016-10-05 13:52:13,054] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 13:52:13,054] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 13:52:13,063] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 13:52:13,064] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 13:53:42,157] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 13:53:42,373] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 13:53:43,784] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['2'], ngram=1, scoring_method=pmi
+[2016-10-05 13:53:43,791] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['google_privacy_policy.txt']
+[2016-10-05 13:53:43,977] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 13:53:43,977] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 13:53:43,987] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 13:53:43,987] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 13:56:50,259] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 13:56:50,463] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 13:56:52,167] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['2'], ngram=1, scoring_method=pmi
+[2016-10-05 13:56:52,174] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['google_privacy_policy.txt']
+[2016-10-05 13:56:52,368] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 13:56:52,368] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 13:56:52,379] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 13:56:52,379] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 14:01:11,725] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 14:01:11,946] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 14:01:13,846] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['2'], ngram=1, scoring_method=pmi
+[2016-10-05 14:01:13,854] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['google_privacy_policy.txt']
+[2016-10-05 14:01:14,030] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 14:01:14,030] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 14:01:14,041] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 14:01:14,041] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 14:02:51,318] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 14:02:51,533] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 14:02:53,685] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['2'], ngram=1, scoring_method=pmi
+[2016-10-05 14:02:53,694] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['google_privacy_policy.txt']
+[2016-10-05 14:02:53,878] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 14:02:53,878] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 14:02:53,888] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 14:02:53,889] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 14:05:52,173] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 14:05:52,424] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 14:05:54,297] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['2'], ngram=1, scoring_method=pmi
+[2016-10-05 14:05:54,305] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['google_privacy_policy.txt']
+[2016-10-05 14:05:54,553] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 14:05:54,553] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 14:05:54,563] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 14:05:54,563] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 14:06:08,153] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 14:06:08,364] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 14:06:10,816] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['2'], ngram=1, scoring_method=pmi
+[2016-10-05 14:06:10,823] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['google_privacy_policy.txt']
+[2016-10-05 14:06:11,008] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 14:06:11,008] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 14:06:11,018] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 14:06:11,018] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 14:07:22,359] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 14:07:22,590] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 14:07:24,201] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['2'], ngram=1, scoring_method=pmi
+[2016-10-05 14:07:24,203] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['google_privacy_policy.txt']
+[2016-10-05 14:07:24,367] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 14:07:24,367] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 14:07:24,378] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 14:07:24,378] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 14:08:11,017] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 14:08:11,229] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 14:08:14,860] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['2'], ngram=1, scoring_method=pmi
+[2016-10-05 14:08:14,862] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['google_privacy_policy.txt']
+[2016-10-05 14:08:15,022] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 14:08:15,023] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 14:08:15,034] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 14:08:15,034] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 14:10:19,037] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 14:10:19,290] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 14:10:21,070] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['2'], ngram=1, scoring_method=pmi
+[2016-10-05 14:10:21,072] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['google_privacy_policy.txt']
+[2016-10-05 14:10:21,233] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 14:10:21,233] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 14:10:21,245] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 14:10:21,245] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 14:10:30,317] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 14:10:31,172] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 14:10:33,382] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['2'], ngram=1, scoring_method=pmi
+[2016-10-05 14:10:33,389] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['google_privacy_policy.txt']
+[2016-10-05 14:10:33,585] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 14:10:33,585] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 14:10:33,595] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 14:10:33,595] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 14:12:21,865] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 14:12:22,080] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 14:12:23,737] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['2'], ngram=1, scoring_method=pmi
+[2016-10-05 14:12:23,739] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['google_privacy_policy.txt']
+[2016-10-05 14:12:23,901] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 14:12:23,901] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 14:12:23,912] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 14:12:23,912] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 14:13:39,871] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 14:13:40,091] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 14:13:41,961] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['2'], ngram=1, scoring_method=pmi
+[2016-10-05 14:13:41,966] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['google_privacy_policy.txt']
+[2016-10-05 14:13:42,151] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 14:13:42,151] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 14:13:42,161] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 14:13:42,161] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 14:14:20,733] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 14:14:20,934] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 14:14:22,441] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['2'], ngram=1, scoring_method=pmi
+[2016-10-05 14:14:22,445] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['google_privacy_policy.txt']
+[2016-10-05 14:14:22,615] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 14:14:22,615] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 14:14:22,626] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 14:14:22,626] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 14:19:31,505] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 14:19:31,707] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 14:19:33,487] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['2'], ngram=1, scoring_method=pmi
+[2016-10-05 14:19:33,490] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['google_privacy_policy.txt']
+[2016-10-05 14:19:33,677] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 14:19:33,677] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 14:19:33,687] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 14:19:33,688] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 14:35:01,573] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 14:35:01,782] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 14:35:03,903] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['2'], ngram=1, scoring_method=pmi
+[2016-10-05 14:35:03,912] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['google_privacy_policy.txt']
+[2016-10-05 14:35:04,114] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 14:35:04,114] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 14:35:04,135] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 14:35:04,135] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x96'' code=150 Skipping
+[2016-10-05 14:35:08,395] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['1'], ngram=1, scoring_method=pmi
+[2016-10-05 14:35:08,397] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['Facebook_Data_Use_Policy.txt']
+[2016-10-05 14:35:08,572] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x94'' code=148 Skipping
+[2016-10-05 14:35:08,572] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x94'' code=148 Skipping
+[2016-10-05 14:35:08,598] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 14:35:08,598] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 14:35:08,601] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x93'' code=147 Skipping
+[2016-10-05 14:35:08,602] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x93'' code=147 Skipping
+[2016-10-05 14:35:47,729] [DEBUG] views.py:index:30 index requested.
+[2016-10-05 14:35:47,962] [DEBUG] views.py:getdocuments:42 Getting list of documents for corpus EULACorpus (id=1)
+[2016-10-05 14:35:50,154] [DEBUG] views.py:wordfreq:89 corpus_id=1, document_ids=['1'], ngram=1, scoring_method=pmi
+[2016-10-05 14:35:50,163] [DEBUG] views.py:wordfreq:97 PlaintextCorpusReader on files: ['Facebook_Data_Use_Policy.txt']
+[2016-10-05 14:35:50,399] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x94'' code=148 Skipping
+[2016-10-05 14:35:50,399] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x94'' code=148 Skipping
+[2016-10-05 14:35:50,428] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 14:35:50,429] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x92'' code=146 Skipping
+[2016-10-05 14:35:50,432] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x93'' code=147 Skipping
+[2016-10-05 14:35:50,432] [WARNING] views.py:clearencoding:21 Unicode Error on str=''\x93'' code=147 Skipping

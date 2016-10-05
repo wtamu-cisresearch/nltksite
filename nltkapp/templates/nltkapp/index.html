@@ -3,17 +3,23 @@
 <head>
 <title> NLTK Command Center </title>
 <link rel="stylesheet" type="text/css" href="{% static 'DataTables/datatables.min.css' %}"/>
+<style type="text/css">
+#outputdiv { display: none; }
+#canvas { border: 1px solid black; }
+</style>
 <script type="text/javascript" charset="utf-8">
 	var wordList = [];
+	var wordCloudList = [];
 	var oTable;
 </script>
 <script src="{% static 'js/jquery-3.1.1.js' %}"></script>
 <script type="text/javascript" src="{% static 'DataTables/datatables.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/wordcloud2.js' %}"></script>
 <script>
 	$( document ).ready(function() {
 		corpus_selected();
 	});
-	
+
 	function corpus_selected() {
 		var value = $("#corpus_dropdown option:selected").val();
 		$.ajax({
@@ -32,6 +38,7 @@
 			}
 		});
 	}
+	
 	function getDocuments() {
 		var documentIDs = [];
 		$("#document_dropdown option:selected").each(function(i, selected) {
@@ -60,9 +67,33 @@
 			success: function (data) {
 				console.log(data.list);
 				wordList = data.list;
-				createTable();
+				/*
+				wordCloudList = [];
+				for (var i = 0; i < wordList.length; i++) {
+					var tmpArray = [ wordList[i].word, wordList[i].weight ];
+					wordCloudList.push(tmpArray);
+				}
+				*/
+				drawWordCloud();
 			}
 		});
+	}
+	
+	function drawWordCloud() {
+		$('#canvas').off('wordcloudstop');
+		$('#canvas').on('wordcloudstop', function() {
+			console.log("Word Cloud Stopped");
+			createTable();
+		});
+		
+		WordCloud($('#canvas')[0], { 
+				list: wordList,
+				gridSize: 18,
+				weightFactor: 3,
+				click: function(item) {
+					console.log(item.word + ': ' + item.weight);
+				},
+			} );
 	}
 	
 	function createTable() {
@@ -71,13 +102,57 @@
 			data: wordList,
 			columns: [
 				{ "data": "word", "title": "Word" },
-				{ "data": "freq", "title": "Frequency" },
+				{ "data": "weight", "title": "Frequency" },
 				{ "data": "exclude_reason", "title": "Excluded?" },
 			],
 			scrollY: "400px",
 			paging: false,
 			scrollCollapse: true,
+			columnDefs: [ {
+				targets: 2,
+				render: function (data, type, full, meta) {
+					if (full.exclude == 0) { // Word is not excluded
+						return 'No <input type="checkbox" class="excludeCheckbox" value="' + meta.row + '">';
+					} else if (full.exclude == 1) { // Word is excluded because it cannot fit in the word cloud
+						return 'Yes - Word cannot fit in word cloud <input type="checkbox" class="excludeCheckbox" value="' + meta.row + '" checked disabled>';
+					} else if (full.exclude == 2) { // Word is manually excluded by user
+						return 'Yes - Word is excluded by user <input type="checkbox" class="excludeCheckbox" value="' + meta.row + '" checked>';
+					}
+					return 'Unknown - Exclude Reason: ' + full.exclude + ' <input type="checkbox" class="excludeCheckbox" value="' + meta.row + '">';
+				}
+			} ],
 		} );
+		
+		// Event handler for when user clicks on exclude checkbox
+		$(".excludeCheckbox").off();
+		$(".excludeCheckbox").on('click', function( e ) {
+			console.log("clicked checkbox " + $(this).val() + ". Checked? " + $(this).is(':checked') );
+			if ($(this).is(':checked') && wordList[$(this).val()].exclude == 0) {
+				wordList[$(this).val()].exclude = 2; // exclude code 2 means user excluded
+			} else {
+				wordList[$(this).val()].exclude = 0;
+			}
+		});
+		
+		// Event handler for when user clicks a row
+		$("#example tbody tr").off();
+		$("#example tbody tr").on('click', function( e ) {
+			var d = oTable.row(this).data();
+			if ( $(this).hasClass('selected') ) {
+				$(this).removeClass('selected');
+				if (d.exclude == 0) {
+					// Unhighlight word in wordcloud
+					console.log("TODO: Unhighlight word '" + d.word + "' in wordcloud");
+				}
+			} else {
+				oTable.$('tr.selected').removeClass('selected');
+				$(this).addClass('selected');
+				if (d.exclude == 0) {
+					// Highlight word in wordcloud
+					console.log("TODO: Highlight word '" + d.word + "' in wordcloud");
+				}
+			}
+		});
 	}
 </script>
 </head>
@@ -106,19 +181,20 @@ Select Corpus:
 </select>
 <input type="button" value="Generate Word Cloud" onclick="nltk_generate_wordcloud()">
 <hr />
-
+<!--
 <div id="loadingdiv">
-<p id="loading"><img src="{{ STATIC_URL }}img/loading.gif" /></p>
+<p id="loading"><img src="{% static 'img/loading.gif' %}" /></p>
 <p id="wordcloudinfo"></p>
 <hr />
 </div>
+-->
 <div id="outputdiv">
 <p id="outputtext"></p>
 <hr />
 </div>
 
 <div id="canvasdiv">
-<canvas id="canvas" width="800" height="600">
+<canvas id="canvas" width="1170" height="760">
 This text is displayed if your browser does not support HTML5 Canvas.
 </canvas>
 </div>
@@ -129,5 +205,6 @@ This text is displayed if your browser does not support HTML5 Canvas.
 </table>
 </div>
 <br />
+<input type="button" value="Redraw Word Cloud" onclick="drawWordCloud()">
 </body>
 </html>

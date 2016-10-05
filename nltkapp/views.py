@@ -48,7 +48,7 @@ def getdocuments(request):
 
 def get_sentences(request):
 	corpus_id = request.GET.get('corpus_id', None)
-	document_ids = request.GET.get('document_ids', None)
+	document_ids = json.loads(request.GET.get('document_ids', None))
 	word = request.GET.get('word', None)
 	logger.debug("corpus_id=%s, document_ids=%s, word=%s" % (corpus_id, str(document_ids), word))
 	finalResult = {}
@@ -109,7 +109,7 @@ def wordfreq(request):
 	for b in first_word_list:
 		for sample in fdist:
 			if b == sample:
-				worddict = {'word': clearencoding(' '.join(sample)), 'freq': fdist[sample], 'exclude': 0, 'exclude_reason': ''}
+				worddict = {'word': clearencoding(' '.join(sample)), 'weight': fdist[sample], 'exclude': 0, 'exclude_reason': ''}
 				break
 		word_list.append(worddict)
 		
@@ -137,7 +137,7 @@ def onegram_collocation(words):
 			unusual = False
 		
 		if (len(clearencoding(sample)) > 0):
-			word_list.append({'word': clearencoding(sample), 'freq': fdist[sample], 'exclude': 0, 'exclude_reason': '', 'unusual': unusual})
+			word_list.append({'word': clearencoding(sample), 'weight': fdist[sample], 'exclude': 0, 'exclude_reason': '', 'unusual': unusual})
 
 	return JsonResponse({'list':word_list})
 
@@ -198,7 +198,7 @@ def trigram_collocation(words, score):
 
 # Given an array of words, connect to wordnet and return the part of speech, definition, etc...
 def wordnet_data(request):
-	words = request.GET.get('words', None)
+	words = json.loads(request.GET.get('words', None))
 	results = []
 	for w in words:
 		syns = wordnet.synsets(w)
